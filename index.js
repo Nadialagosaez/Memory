@@ -1,8 +1,47 @@
 // holds the deck of cards for the game
 let cards = [];
+let size = 2;
 
+let modelCards = [{
+  title: 1,
+  img: "😀"
+},
+{ title: 2,
+  img: "😈"
+},
+{ title: 3,
+  img: "😎"
+},
+{ title: 4,
+  img: "😇"
+},
+{ title: 5,
+  img: "😱"
+},
+{ title: 6,
+  img: "🤠"
+},
+{ title: 7,
+  img: "😻"
+},
+{ title: 8,
+  img: "🙊"
+}]
 // generates a new deck of cards, with size / 2 pairs, and shuffled
-function generateCards(size) {}
+
+function generateCards(size) {
+ for(let el of modelCards){
+  cards.push({...el});
+  cards.push({...el});
+}
+
+
+for (let i = 0; i < cards.length;  i++){
+  cards[i].id = i;
+}
+console.log(cards)
+
+}
 
 // shuffles an array
 function shuffle(arr) {}

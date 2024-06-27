@@ -29,7 +29,7 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
 
 ### 1. Preparació de la baralla
 
-- [ ] Completa la funció `generateCards`.
+- [x] Completa la funció `generateCards`.
 
   - Aquesta funció reb una mida `size` i genera una baralla de cartes amb `size` / 2 parelles.
   - Utilitza almenys un loop per a generar les cartes.
