@@ -4,13 +4,22 @@
 
 @layer components {
   .card {
-    /* background-color:lawngreen;
-    bg-emerald-600  
-    transition-opacity, 
-  duration-300, 
-  hover:opacity-25, 
-  w-32, 
-  h-32 */
+    background-color: rgb(38, 37, 37);
+    width: 128px;
+    height: 128px; 
+    flex: auto;
+    color: beige;
+    text-align: center;
+    text-justify: center;
+ 
+  }
+  .card:hover {
+    background-color: rgba(13, 148, 137, 0.719);
   }
   
+  .grid{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
 }
