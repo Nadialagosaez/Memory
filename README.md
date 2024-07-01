@@ -48,7 +48,7 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
 
 ![Mostrar la baralla](img/img1.png)
 
-- [ ] Crea la quadrícula
+- [x] Crea la quadrícula
 
   - Genera un contenidor grid de 4 x 4 a l'arxiu HTML
   - Aquest grid haurà d'estar posicionat al centre de la pàgina

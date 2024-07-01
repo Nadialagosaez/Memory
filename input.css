@@ -4,5 +4,13 @@
 
 @layer components {
   .card {
+    /* background-color:lawngreen;
+    bg-emerald-600  
+    transition-opacity, 
+  duration-300, 
+  hover:opacity-25, 
+  w-32, 
+  h-32 */
   }
+  
 }
