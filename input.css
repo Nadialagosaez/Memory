@@ -22,9 +22,7 @@
     position: relative;
  
   }
-  .cardBack:hover {
-    background-color: #be185d;
-  }
+  
   
   .cardInner{
     position: absolute;
@@ -32,6 +30,7 @@
     height: 100%; 
     /* transition: transform 0,6s; */
     transform-style: preserve-3d ;
+
   }
 
   .flipped .cardInner{
@@ -46,6 +45,8 @@
     visibility: hidden;
     padding: 10% 0;
     position: absolute;
+    border-radius: 20px;
+
   }
 
   .flipped .cardInner .cardFront {
@@ -53,13 +54,24 @@
   }
 
   .cardBack{
-    background-color: rgb(38, 37, 37);
-    /* background-image: "/Users/nadialagosaez/Desktop/Front End/Actividades/fept03-dom-2-memory-game-Nadialagosaez/img/naipe.png"; */
+    background-image:  linear-gradient(
+      to bottom,
+      rgba(127, 127, 127, 0.755),
+      rgba(8, 8, 8, 0.704)
+    ),
+    url("/img/cardBack.png");
+
+    /* background-color: rgba(38, 37, 37, 0.716); */
     width: 100%;
     height: 100%; 
     position: absolute;
-
+    border-radius: 20px;
   }
+
+  .cardBack:hover {
+    background-color: #be185da1;
+  }
+
   .matched{
     position: absolute;
   /* aqui el estilo de match */
