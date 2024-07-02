@@ -2,6 +2,7 @@
   
   // holds the deck of cards for the game
 let cards = [];
+let flippedCards = [];
 let size = 2;
 let modelCards = [{
   title: 1,
@@ -69,16 +70,28 @@ function shuffle(arr) {
 
 
 // flips a card by id --> NO TENGO IDEA COMO HACERLO
-function flipCard(id) { 
+function flipCard(cardDiv) { 
   //1. Detectar el click del div --> eventTarget.id
   //2. Mirar qué carta hay ahí dentro y hacerla visible
   
 
-  id.target.visibility = "visible";
+ if (flippedCards.length < 2 && !cardDiv.classList.contains("flipped")&& !cardDiv.classList.contains("matched")){
+  
+  cardDiv.classList.add("flipped");
+  flippedCards.push(cards.find(cards => cardDiv.id === cards.id))
+ 
+  if (flippedCards.length === 2){
+    setTimeout(checkMatched, 1000);
   }
+}
+
+console.log(flippedCards)
+}
 
 // marks any flipped cards as matched if they match
-function checkMatched() {}
+function checkMatched() {
+  
+}
 
 // shows a message if the game is over
 function checkWin() {}
@@ -94,14 +107,28 @@ function showCards() {
   const cardGrid = document.querySelector('.grid');
   for (let el of cards){
         const cardDiv = document.createElement('div');
-        const card = document.createElement('p')
-        card.innerHTML = el.img;
-        card.id = el.id;
+        cardDiv.dataset.id = el.id
+        cardDiv.classList.add("cardDiv")
+        
+        const cardInner = document.createElement("div")
+        cardInner.classList.add("cardInner")
+
+        const cardBack = document.createElement("div"); 
+        cardBack.classList.add("cardBack")
+
+        const cardFront = document.createElement('div');
+        cardFront.textContent = el.img;
+        cardFront.classList.add("cardFront")
+        
         
         cardGrid.appendChild(cardDiv)
-        cardDiv.appendChild(card)
+        cardDiv.appendChild(cardInner)
+        cardInner.appendChild(cardBack)
+        cardInner.appendChild(cardFront)
 
-  }
+
+        cardDiv.addEventListener("click", () => flipCard(cardDiv))
+  } 
 }
 
 // updates the classes on the card DOM elements based on the state of the cards
