@@ -3,23 +3,35 @@
 @tailwind utilities;
 
 @layer components {
-  .card {
+   .grid div{
     background-color: rgb(38, 37, 37);
-    width: 128px;
-    height: 128px; 
+    width: 120px;
+    height: 120px; 
+    font-size: 60px;
     flex: auto;
-    color: beige;
     text-align: center;
-    text-justify: center;
+    padding: 10% 0;
  
   }
-  .card:hover {
-    background-color: rgba(13, 148, 137, 0.719);
+  .grid div:hover {
+    background-color: #be185d;
   }
   
   .grid{
-    justify-content: center;
+    justify-items: center;
     align-items: center;
     gap: 10px;
   }
+
+  h1{
+    font-family:"Shadows Into Light";
+    font-size: 40px;
+  }
+
+  .shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 }

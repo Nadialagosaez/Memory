@@ -1,6 +1,7 @@
-// holds the deck of cards for the game
+  
+  
+  // holds the deck of cards for the game
 let cards = [];
-let size = 2;
 
 let modelCards = [{
   title: 1,
@@ -50,18 +51,16 @@ function getRandomIntInclusive(min, max) {
 }
 
 // shuffles an array
-function shuffle(arr) { //--> No logro obtener lan cantidad exacta de numeros y cambiarlos
-let j =[]
+function shuffle(arr) { 
+// let j =[]
   for(let i = arr.length-1; i>=0; i--){
-    
-    let numAl = (getRandomIntInclusive(0, i));
-    
-    if(!j.includes(numAl)){
-      j.push(numAl)//es solo una verificacion
-      const el = arr.splice(i, 1,)[0];
-      arr.splice(j, 0, el);
-    } 
-  
+    arr.sort(() => 0.5 - Math.random())
+    // let numAl = (getRandomIntInclusive(0, i));
+    // if(!j.includes(numAl)){
+    //   j.push(numAl)//es solo una verificacion
+    //   const el = arr.splice(i, 1,)[0];
+    //   arr.splice(j, 0, el);
+    // } 
   }
   return arr;
   
@@ -70,14 +69,13 @@ let j =[]
 
 
 // flips a card by id --> NO TENGO IDEA COMO HACERLO
-function flipCard(id) {
-// let cardImg = document.createElement("card")
-// cardImg.innerHTML = cards.img.value
-// let cardGrid = ducument.getElementById(id)
-// cardGrid.appenchild(cardImg)
-// document.getElementById(id).innerHTML = cards[id].values
+function flipCard(id) { 
+  //1. Detectar el click del div --> eventTarget.id
+  //2. Mirar qué carta hay ahí dentro y hacerla visible
+  
 
-}
+  id.target.visibility = "visible";
+  }
 
 // marks any flipped cards as matched if they match
 function checkMatched() {}
@@ -92,19 +90,46 @@ function flipBack() {}
 function handleCardClick(id) {}
 
 // creates the DOM elements for the cards
-function showCards() {}
+function showCards() {
+  const cardGrid = document.querySelector('.grid');
+  for (let el of cards){
+        const cardDiv = document.createElement('div');
+        const card = document.createElement('p')
+        card.innerHTML = el.img;
+        card.id = el.id;
+        
+        cardGrid.appendChild(cardDiv)
+        cardDiv.appendChild(card)
+
+  }
+}
 
 // updates the classes on the card DOM elements based on the state of the cards
-function updateCards() {}
+function updateCards() {
+
+}
 
 // initializes the game
-function createGame(size) {
+function createGame() {
   generateCards(size * size);
   shuffle(cards);
-  flipCard("card1");
   showCards();
 }
 
 // INITIALIZE THE GAME WHEN THE PAGE LOADS
-createGame(4);
+createGame();
 console.log(cards)
+
+//OCULTAR LA CARTA
+// card.style.visibility = "hidden";
+
+
+//por ahora el boton recarga la pagina para crear una nueva baraja
+function reload(){
+  location.reload();
+}
+
+const boton = document.getElementById("newGame");
+boton.addEventListener("click", reload);
+
+

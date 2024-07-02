@@ -37,7 +37,7 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
   - Cada carta té un `id` únic i un valor de 1 a 8 (per parelles). És a dir, la baralla contindrà dues cartes amb el valor 1, dues amb el valor 2, etc. fins al valor 8.
   - Pots generar les cartes de manera ordenada i després utilitzar la funció `shuffle` per a barrejar la baralla (veure següent punt).
 
-- [ ] Completa la funció `shuffle`.
+- [x] Completa la funció `shuffle`.
 
   - Aquesta funció reb un array i ordena els seus elements de manera aleatòria.
   - Utilitza un loop descendent utilitzant una variable `i`. Selecciona una posició aleatòria `j` entre 0 i `i` i intercanvia els elements de la posició seleccionada `j` amb la posició `i`. Aquesta operació es repeteix fins que tots els elements del array han estat intercanvats.
@@ -62,7 +62,7 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
 
   - Fer click a aquest botó haurà de crear un joc nou.
 
-- [ ] Dóna estils visuals al joc
+- [x] Dóna estils visuals al joc
   - L'estil és lliure. Fes-ho com vulguis.
 
 ### 3. Donar la volta a les cartes

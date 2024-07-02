@@ -5,43 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM memory game</title>
+
     <link href="output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   </head>
 
-  <body>
-    <script type="text/javascript" src="index.js"></script>
-    <!-- Hacer grid areas?
-     cabecera del juego y cuadricula
-      
-     cabecera
-     0  1  2  3
-     4  5  6  7
-     8  9  10 11
-     12 13 14 15 -->
-    <h1 class="m-10 text-center text-3xl underline decoration-wavy decoration-pink-700">MEMORY</h1>
-    <div class="flex justify-center m-10">
+  <body class="bg-gradient-to-r from-emerald-500 to-indigo-500">
+   
+    <h1 class="m-3 text-center text-stone-200 font-semibold font">MEMORY CARDS</h1>
+
+    <div class="flex justify-center m-5 justify-items-center">
        <div class="grid grid-cols-4 w-6/12">
-          <div id="card1"  class="card"></div>
-          <div id="card2"  class="card">CARD</div>
-          <div id="card3"  class="card">CARD</div>
-          <div id="card4"  class="card">CARD</div>
-          <div id="card5"  class="card">CARD</div>
-          <div id="card6"  class="card">CARD</div>
-          <div id="card7"  class="card">CARD</div>
-          <div id="card8"  class="card">CARD</div>
-          <div id="card9"  class="card">CARD</div>
-          <div id="card10" class="card">CARD</div>
-          <div id="card11" class="card">CARD</div>
-          <div id="card12" class="card">CARD</div>
-          <div id="card13" class="card">CARD</div>
-          <div id="card14" class="card">CARD</div>
-          <div id="card15" class="card">CARD</div>
-          <div id="card16" class="card">CARD</div>
+         
         </div>
     </div>
 
     <div class="flex content-center justify-center">
-      <button class="border-2 bg-amber-300 h-10 w-24 mb-20">New Game</button>
+      <button id= "newGame" class="border-2 bg-amber-300 h-10 w-24 mb-3 shadows-into-light-regular">NEW GAME</button>
     </div>
+
+    <script type="text/javascript" src="index.js"></script>
+
   </body>
 </html>
