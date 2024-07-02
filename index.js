@@ -69,10 +69,12 @@ let j =[]
 
 
 
-// flips a card by id
+// flips a card by id --> NO TENGO IDEA COMO HACERLO
 function flipCard(id) {
-let cardImg = document.createElement("id")
-cardImg.innerHTML = cards[id].img
+// let cardImg = document.createElement("card")
+// cardImg.innerHTML = cards.img.value
+// let cardGrid = ducument.getElementById(id)
+// cardGrid.appenchild(cardImg)
 // document.getElementById(id).innerHTML = cards[id].values
 
 }
@@ -99,6 +101,7 @@ function updateCards() {}
 function createGame(size) {
   generateCards(size * size);
   shuffle(cards);
+  flipCard("card1");
   showCards();
 }
 
