@@ -2,7 +2,7 @@
   
   // holds the deck of cards for the game
 let cards = [];
-
+let size = 2;
 let modelCards = [{
   title: 1,
   img: "😀"
@@ -117,7 +117,7 @@ function createGame() {
 }
 
 // INITIALIZE THE GAME WHEN THE PAGE LOADS
-createGame();
+createGame(4);
 console.log(cards)
 
 //OCULTAR LA CARTA
