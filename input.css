@@ -4,6 +4,9 @@
 
 @layer components {
   
+  body{
+    height: 100%;
+  }
   .grid{
     justify-items: center;
     align-items: center;
@@ -85,10 +88,19 @@
   
 
   .matched .cardInner .cardFront{
-    position: absolute;
+    position: relative;
     visibility: visible;
 
   /* aqui el estilo de match */
+  }
+
+
+  .matched::after {
+    content: "✅";
+    position: absolute;
+    top: 2px; /* Ajustar la posición vertical */
+    right: 5px; /* Ajustar la posición horizontal */
+    font-size: 15px;
   }
 
 
@@ -111,7 +123,9 @@
     color: white;
     justify-content: center;
     align-content: center;
-    margin: 30px;
+    align-items: center;
+    margin: 40px;
+    height: 400px;
   }
 
    #win section {

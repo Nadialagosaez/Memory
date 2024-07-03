@@ -85,7 +85,7 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
     - Per tal de no mostrar mai el valor i el revers de la carta a la vegada, fem que els elements `back` i `front` tinguin una posició `absolute` i que l'element `card` tingui una posició `relative`.
   - Enlloc de mostrar un número, mostra-hi una imatge. Pots utilitzar les teves propies imatges (anomena els arxius `1.png`, `2.png`, etc.) per a una fàcil identificació. També pots utilitzar imatges de [Lorem Picsum](https://picsum.photos/) o un altre servei.
 
-- [ ] Completa la funció `updateCards`.
+- [x] Completa la funció `updateCards`.
 
   - Aquesta funció ha d'afegir o treure la classe `flipped` a cada carta, en funció del seu estat (si està descoberta o no).
   - Selecciona totes les cartes del DOM, i per a cada una de elles, comprova si la carta està descoberta o no (mirant a l'array `cards`).
@@ -101,11 +101,11 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
 
 ![Cartes aparellades](img/img3.png)
 
-- [ ] Només dues cartes poden estar descobertes al mateix temps.
+- [x] Només dues cartes poden estar descobertes al mateix temps.
 
   - Fes-ho a la funció `flipCard`. Assegura't de donar la volta a una carta només si hi menys de dues cartes descobertes.
 
-- [ ] Marca les cartes com a `matched` quan s'han trobat.
+- [x] Marca les cartes com a `matched` quan s'han trobat.
 
   - Completa la funció `checkMatched` per a fer això. Aquesta funció s'ha de cridar cada cop que donem la volta a una carta.
   - Afegeix una propietat nova a cada objecte carta si ho necessites.
@@ -113,18 +113,18 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
   - Si hem trobat una parella, les cartes s'han de marcar com a `matched`.
   - A la funció `flipCard`, hauràs de tenir en compte les cartes que ja han estat `matched`.
 
-- [ ] Torna a tapar les cartes
+- [x] Torna a tapar les cartes
 
   - Completa la funció `flipBack` per a fer això.
   - Aquesta funció marca les cartes com a "no destapades" si n'hem destapat dues pero no són parella.
   - No tinguis en compte les cartes `matched` com a cartes destapades.
   - Aquesta funció s'ha de cridar automàticament al cap d'un segon de destapar cada carta, utilitzant la funció [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout).
 
-- [ ] Afegeix un estil visual per a les cartes aparellades
+- [x] Afegeix un estil visual per a les cartes aparellades
 
   - Pots remarcar la vora amb un color diferent, mostrar una icona ✅ o algun altre element visual.
 
-- [ ] Comprova si s'han trobat totes les parelles
+- [x] Comprova si s'han trobat totes les parelles
 
   - Cada cop que es faci click, cal comprovar si hem acabat el joc.
   - Hem acabat el joc si totes les cartes han estat aparellades.

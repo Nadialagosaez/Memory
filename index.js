@@ -88,8 +88,7 @@ console.log(flippedCards)
 
 // marks any flipped cards as matched if they match
 function checkMatched() {
-  matched=16;
-  checkWin()
+  
   const [card1, card2] = flippedCards;
     if(card1.title === card2.title){
       document.getElementById(card1.id).classList.add('matched');
