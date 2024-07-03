@@ -88,6 +88,8 @@ console.log(flippedCards)
 
 // marks any flipped cards as matched if they match
 function checkMatched() {
+  matched=16;
+  checkWin()
   const [card1, card2] = flippedCards;
     if(card1.title === card2.title){
       document.getElementById(card1.id).classList.add('matched');
@@ -110,7 +112,18 @@ function checkMatched() {
 // shows a message if the game is over
 function checkWin() {
   if (matched === 16){
-    conasole.log("you win!!")
+    console.log("you win!!")
+    document.querySelector('.grid').style = 'display: none';
+    document.getElementById('win').style = 'display: flex';
+
+    // const contenedor = document.getElementById('contenedor');
+
+    // const msjDiv = document.createElement('div');
+    // const msj = document.createElement('p');
+    // msj.innerHTML = 'HAS GANADO! FELICITACIONES';
+
+    // contenedor.appendChild(msjDiv);
+    // msjDiv.appendChild(msj);
     //mostrar pop up o dejar de mostrar cartas y hacer un efecto de cartel?
   }
 }

@@ -53,12 +53,12 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
   - Genera un contenidor grid de 4 x 4 a l'arxiu HTML
   - Aquest grid haurà d'estar posicionat al centre de la pàgina
 
-- [ ] Completa la funció `showCards`.
+- [x] Completa la funció `showCards`.
 
   - Genera un element `div` per a cada carta de la baralla, i mostra'l dins del grid. Dóna a l'element una classe CSS `card`.
   - El contingut del `div` és el valor de la carta.
 
-- [ ] Afegeix un botó "New Game".
+- [x] Afegeix un botó "New Game".
 
   - Fer click a aquest botó haurà de crear un joc nou.
 
@@ -69,13 +69,13 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
 
 ![Donar la volta a les cartes](img/img2.png)
 
-- [ ] Marca les cartes com a descobertes.
+- [x] Marca les cartes com a descobertes.
 
   - Fer click en una carta ha de marcar-la com a "descoberta". Utilitza `handleCardClick` com a gestor de l'esdeveniment `click` de la carta.
   - Afegeix una propietat nova a cada objecte carta si ho necessites.
   - Completa la funció `flipCard` per a fer això.
 
-- [ ] Visualitza la cara i el revers de cada carta
+- [x] Visualitza la cara i el revers de cada carta
 
   - Ara mateix estem mostrant un número per cada carta.
   - Enlloc d'això, s'hauria de mostrar el contingut de la carta només quan aquesta està descoberta.
@@ -85,13 +85,13 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
     - Per tal de no mostrar mai el valor i el revers de la carta a la vegada, fem que els elements `back` i `front` tinguin una posició `absolute` i que l'element `card` tingui una posició `relative`.
   - Enlloc de mostrar un número, mostra-hi una imatge. Pots utilitzar les teves propies imatges (anomena els arxius `1.png`, `2.png`, etc.) per a una fàcil identificació. També pots utilitzar imatges de [Lorem Picsum](https://picsum.photos/) o un altre servei.
 
-- [ ] Completa la funció `updateCards`.
+- [ ] Completa la funció `updateCards`.
 
   - Aquesta funció ha d'afegir o treure la classe `flipped` a cada carta, en funció del seu estat (si està descoberta o no).
   - Selecciona totes les cartes del DOM, i per a cada una de elles, comprova si la carta està descoberta o no (mirant a l'array `cards`).
   - En fer click a cada carta, a més de marcar-la com a descoberta, s'ha de cridar la funció `updateCards` per a actualitzar-ne la visualització.
 
-- [ ] Afegeix estils
+- [x] Afegeix estils
   - Quan una carta té la classe `flipped`, s'hauria de veure només el `front` de la carta.
   - Quan una carta no té la classe `flipped`, s'hauria de veure només el `back` de la carta.
   - Pots crear un efecte visual per a això utilitzant la propietat CSS `transform` i aplicant-hi una rotació [`rotateY`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotateY). Combina les rotacions de `0deg` i `180deg` en els elements `front` i `back` per crear l'efecte de girar una carta. Per tal de no mostrar la part del darrera d'un element HTML, utilitza la propietat [`backface-visibility: hidden;`](https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility)

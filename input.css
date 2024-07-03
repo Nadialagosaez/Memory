@@ -8,6 +8,7 @@
     justify-items: center;
     align-items: center;
     gap: 10px;
+    visibility: visible;
   }
 
    .cardDiv{
@@ -20,8 +21,6 @@
     flex: auto;
     text-align: center;
     position: relative;
-
- 
   }
   
   
@@ -29,14 +28,15 @@
     position: absolute;
     width: 100%;
     height: 100%; 
-    /* transition: transform 0,6s; */
+    transition: transform 1s;
     transform-style: preserve-3d ;
 
   }
 
   .flipped .cardInner{
-    rotate: 180;
+   
     transform: rotateY(180deg);
+    transition-duration: 0.6s;
   }
 
   .cardFront{
@@ -69,6 +69,8 @@
     height: 100%; 
     position: absolute;
     border-radius: 10px;
+    transform: rotateY(0deg);
+
   }
 
   .cardBack:hover {
@@ -101,4 +103,39 @@
     font-style: normal;
   }
   
+  #win {
+   
+    display: none;
+    font-family:"Shadows Into Light";
+    font-size: 30px;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    margin: 30px;
+  }
+
+   #win section {
+    width: 700px;
+    height: 200px;
+    align-content: center;
+    background: linear-gradient(
+      125deg,
+      rgb(252 211 77),
+      rgba(188, 12, 138, 0.868),
+      rgb(111, 9, 113)
+    );;    
+    border-radius: 10px;
+    border-color: white;
+    border-width: thick;
+  
+  }
+
+  button{
+    background: linear-gradient(
+      125deg,
+      rgb(252 211 77),
+      rgba(188, 12, 138, 0.868));
+    color: white;
+    box-shadow:rgb(53, 53, 53)
+  }
 }
