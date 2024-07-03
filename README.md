@@ -133,7 +133,7 @@ En aquesta activitat crearàs un joc de memoria amb el DOM, HTML i CSS.
 ### 5. Millora el joc (OPCIONAL)
 
 - [x] Afegeix un comptador de "número de moviments".
-- [ ] Afegeix un comptador de temps.
+- [x] Afegeix un comptador de temps.
 - [ ] ...
 
 ## Recursos
