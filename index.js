@@ -181,7 +181,7 @@ let cont = 0;
 function timer(){
   const textTime = document.getElementById("timer");
   const id = setInterval(function(){
-    textTime.innerHTML = `Time: ${cont} s`;
+    textTime.innerHTML = `Time: ${cont} seg`;
     cont++;
     if (matched === 16){
       clearInterval(id)

@@ -14,10 +14,7 @@
     visibility: visible;
   }
 
-   .cardDiv{
-    /* background-image: "/Users/nadialagosaez/Desktop/Front End/Actividades/fept03-dom-2-memory-game-Nadialagosaez/img/naipe.png"; */
-
-   
+   .cardDiv{   
     width: 100px;
     height: 100px; 
     font-size: 60px;
