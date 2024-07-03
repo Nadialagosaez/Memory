@@ -82,7 +82,6 @@ function flipCard(cardDiv) {
   }
   
 }
-console.log(flippedCards)
 
 }
 
@@ -94,10 +93,8 @@ function checkMatched() {
       document.getElementById(card1.id).classList.add('matched');
       document.getElementById(card2.id).classList.add('matched');
     
-      console.log("Son iguales")
       flippedCards = [];
       matched += 2;
-      console.log(matched)
       checkWin()
 
     } 
@@ -111,19 +108,8 @@ function checkMatched() {
 // shows a message if the game is over
 function checkWin() {
   if (matched === 16){
-    console.log("you win!!")
     document.querySelector('.grid').style = 'display: none';
     document.getElementById('win').style = 'display: flex';
-
-    // const contenedor = document.getElementById('contenedor');
-
-    // const msjDiv = document.createElement('div');
-    // const msj = document.createElement('p');
-    // msj.innerHTML = 'HAS GANADO! FELICITACIONES';
-
-    // contenedor.appendChild(msjDiv);
-    // msjDiv.appendChild(msj);
-    //mostrar pop up o dejar de mostrar cartas y hacer un efecto de cartel?
   }
 }
 
@@ -133,7 +119,6 @@ function flipBack() {
   document.getElementById(card1.id).classList.remove('flipped');
   document.getElementById(card2.id).classList.remove('flipped');
   flippedCards = [];
-  console.log(flippedCards);
 }
 
 // handles the click on a card //no entiendo qué debo hacer
@@ -165,6 +150,8 @@ function showCards() {
 
 
         cardDiv.addEventListener("click", () => flipCard(cardDiv))
+        cardDiv.addEventListener("click", count_click_add)
+
   } 
 }
 
@@ -182,14 +169,18 @@ function createGame() {
 
 // INITIALIZE THE GAME WHEN THE PAGE LOADS
 createGame(4);
-console.log(cards)
 
-//OCULTAR LA CARTA
-// card.style.visibility = "hidden";
-
-
-//por ahora el boton recarga la pagina para crear una nueva baraja
-
+//BOTON
 const boton = document.getElementById("newGame");
 boton.addEventListener("click", updateCards);
+
+
+//Contador de clicks
+let count_click = 0;
+
+function count_click_add() {
+  count_click += 1;
+  const contView = document.getElementById("contador")
+  contView.innerHTML = `Clicks: ${count_click}`;
+}
 

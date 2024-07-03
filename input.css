@@ -18,8 +18,8 @@
     /* background-image: "/Users/nadialagosaez/Desktop/Front End/Actividades/fept03-dom-2-memory-game-Nadialagosaez/img/naipe.png"; */
 
    
-    width: 120px;
-    height: 120px; 
+    width: 100px;
+    height: 100px; 
     font-size: 60px;
     flex: auto;
     text-align: center;
@@ -151,5 +151,13 @@
       rgba(188, 12, 138, 0.868));
     color: white;
     box-shadow:rgb(53, 53, 53)
+  }
+
+  #cab p{
+    font-family:"Shadows Into Light";
+    font-size: 30px;
+    color: rgb(252 211 77);
+    border-color: white;
+
   }
 }
