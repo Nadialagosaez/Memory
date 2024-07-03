@@ -33,7 +33,7 @@ let modelCards = [{
 
 
 
-// generates a new deck of cards, with size / 2 pairs, and shuffled
+// generates a new deck of cards, with size / 2 pairs, and shuffled -> No estoy utilizando el size
 function generateCards(size) {
  for(let el of modelCards){
   cards.push({...el});
@@ -42,7 +42,6 @@ function generateCards(size) {
 for (let i = 0; i < cards.length;  i++){
   cards[i].id = i;
 }
-// return cards;
 }
 
 //genero el numero random en otra funcion
@@ -54,23 +53,14 @@ function getRandomIntInclusive(min, max) {
 
 // shuffles an array
 function shuffle(arr) { 
-// let j =[]
   for(let i = arr.length-1; i>=0; i--){
     arr.sort(() => 0.5 - Math.random())
-    // let numAl = (getRandomIntInclusive(0, i));
-    // if(!j.includes(numAl)){
-    //   j.push(numAl)//es solo una verificacion
-    //   const el = arr.splice(i, 1,)[0];
-    //   arr.splice(j, 0, el);
-    // } 
   }
   return arr;
-  
 }
 
 
-
-// flips a card by id --> NO TENGO IDEA COMO HACERLO
+// flips a card by id 
 function flipCard(cardDiv) { 
  if (flippedCards.length < 2 && !cardDiv.classList.contains("flipped") && !cardDiv.classList.contains("matched")){
   
@@ -82,7 +72,6 @@ function flipCard(cardDiv) {
   }
   
 }
-
 }
 
 // marks any flipped cards as matched if they match
@@ -110,6 +99,12 @@ function checkWin() {
   if (matched === 16){
     document.querySelector('.grid').style = 'display: none';
     document.getElementById('win').style = 'display: flex';
+    let winCont =document.getElementById('winCont');
+    let puntos = document.createElement('p');
+    puntos.innerHTML = `Lo has logrado en ${clicks} clicks y ${cont} segundos`
+
+    winCont.appendChild(puntos)
+
   }
 }
 
@@ -120,9 +115,6 @@ function flipBack() {
   document.getElementById(card2.id).classList.remove('flipped');
   flippedCards = [];
 }
-
-// handles the click on a card //no entiendo qué debo hacer
-function handleCardClick(id) {}
 
 // creates the DOM elements for the cards
 function showCards() {
@@ -142,16 +134,13 @@ function showCards() {
         cardFront.textContent = el.img;
         cardFront.classList.add("cardFront")
         
-        
         cardGrid.appendChild(cardDiv)
         cardDiv.appendChild(cardInner)
         cardInner.appendChild(cardBack)
         cardInner.appendChild(cardFront)
 
-
         cardDiv.addEventListener("click", () => flipCard(cardDiv))
-        cardDiv.addEventListener("click", count_click_add)
-
+        cardDiv.addEventListener("click", count_clicks)
   } 
 }
 
@@ -168,19 +157,40 @@ function createGame() {
 }
 
 // INITIALIZE THE GAME WHEN THE PAGE LOADS
-createGame(4);
+createGame();
 
 //BOTON
 const boton = document.getElementById("newGame");
 boton.addEventListener("click", updateCards);
 
 
-//Contador de clicks
-let count_click = 0;
-
-function count_click_add() {
-  count_click += 1;
+//CONTADOR -> Va contando los clicks sobre las cards
+let clicks = 0;
+function count_clicks() {
+  clicks += 1;
   const contView = document.getElementById("contador")
-  contView.innerHTML = `Clicks: ${count_click}`;
+  contView.innerHTML = `Clicks: ${clicks}`;
+  
+  if(clicks === 1){
+    timer()
+  };  
 }
+
+//TIMER -> Se ejecuta en el primer click
+let cont = 0;
+function timer(){
+  const textTime = document.getElementById("timer");
+  const id = setInterval(function(){
+    textTime.innerHTML = `Time: ${cont} s`;
+    cont++;
+    if (matched === 16){
+      clearInterval(id)
+    }
+  },1000);
+}
+
+
+
+
+
 

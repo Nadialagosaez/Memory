@@ -116,7 +116,6 @@
   }
   
   #win {
-   
     display: none;
     font-family:"Shadows Into Light";
     font-size: 30px;
@@ -153,7 +152,7 @@
     box-shadow:rgb(53, 53, 53)
   }
 
-  #cab p{
+  #cont p{
     font-family:"Shadows Into Light";
     font-size: 30px;
     color: rgb(252 211 77);
