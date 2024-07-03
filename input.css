@@ -20,6 +20,7 @@
     flex: auto;
     text-align: center;
     position: relative;
+
  
   }
   
@@ -45,7 +46,7 @@
     visibility: hidden;
     padding: 10% 0;
     position: absolute;
-    border-radius: 20px;
+    border-radius: 10px;
 
   }
 
@@ -54,26 +55,37 @@
   }
 
   .cardBack{
-    background-image:  linear-gradient(
-      to bottom,
-      rgba(127, 127, 127, 0.755),
-      rgba(8, 8, 8, 0.704)
-    ),
-    url("/img/cardBack.png");
+    /* background-color: rgba(85, 85, 85, 0.568); */
 
-    /* background-color: rgba(38, 37, 37, 0.716); */
+    background-image: url('/img/back.png'),
+    linear-gradient(
+      to bottom,
+      rgb(53, 53, 53),
+      rgb(8, 8, 8)
+    );
+    background-repeat : no-repeat;
+    background-position: center;
     width: 100%;
     height: 100%; 
     position: absolute;
-    border-radius: 20px;
+    border-radius: 10px;
   }
 
   .cardBack:hover {
-    background-color: #be185da1;
+    background-image: url('/img/back.png'),
+    linear-gradient(
+      to bottom,
+      rgba(188, 12, 138, 0.868),
+      rgb(111, 9, 113)
+    );
+    -webkit-transform:scale(1.3);transform:scale(1.1);
   }
+  
 
-  .matched{
+  .matched .cardInner .cardFront{
     position: absolute;
+    visibility: visible;
+
   /* aqui el estilo de match */
   }
 

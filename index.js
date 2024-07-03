@@ -3,6 +3,7 @@
   // holds the deck of cards for the game
 let cards = [];
 let flippedCards = [];
+let matched = 0;
 let size = 2;
 let modelCards = [{
   title: 1,
@@ -71,35 +72,59 @@ function shuffle(arr) {
 
 // flips a card by id --> NO TENGO IDEA COMO HACERLO
 function flipCard(cardDiv) { 
-  //1. Detectar el click del div --> eventTarget.id
-  //2. Mirar qué carta hay ahí dentro y hacerla visible
-  
-
- if (flippedCards.length < 2 && !cardDiv.classList.contains("flipped")&& !cardDiv.classList.contains("matched")){
+ if (flippedCards.length < 2 && !cardDiv.classList.contains("flipped") && !cardDiv.classList.contains("matched")){
   
   cardDiv.classList.add("flipped");
-  flippedCards.push(cards.find(cards => cardDiv.id === cards.id))
+  flippedCards.push(cards.find(cards => cards.id == cardDiv.id))
  
   if (flippedCards.length === 2){
     setTimeout(checkMatched, 1000);
   }
+  
 }
-
 console.log(flippedCards)
+
 }
 
 // marks any flipped cards as matched if they match
 function checkMatched() {
+  const [card1, card2] = flippedCards;
+    if(card1.title === card2.title){
+      document.getElementById(card1.id).classList.add('matched');
+      document.getElementById(card2.id).classList.add('matched');
+    
+      console.log("Son iguales")
+      flippedCards = [];
+      matched += 2;
+      console.log(matched)
+      checkWin()
+
+    } 
+    else {
+      flipBack();
+    }
+  };
   
-}
+
 
 // shows a message if the game is over
-function checkWin() {}
+function checkWin() {
+  if (matched === 16){
+    conasole.log("you win!!")
+    //mostrar pop up o dejar de mostrar cartas y hacer un efecto de cartel?
+  }
+}
 
 // sets all flipped props to false except for the matched ones
-function flipBack() {}
+function flipBack() {
+  const [card1, card2] = flippedCards;
+  document.getElementById(card1.id).classList.remove('flipped');
+  document.getElementById(card2.id).classList.remove('flipped');
+  flippedCards = [];
+  console.log(flippedCards);
+}
 
-// handles the click on a card
+// handles the click on a card //no entiendo qué debo hacer
 function handleCardClick(id) {}
 
 // creates the DOM elements for the cards
@@ -107,7 +132,7 @@ function showCards() {
   const cardGrid = document.querySelector('.grid');
   for (let el of cards){
         const cardDiv = document.createElement('div');
-        cardDiv.dataset.id = el.id
+        cardDiv.id = el.id // no se buscar con el data-id
         cardDiv.classList.add("cardDiv")
         
         const cardInner = document.createElement("div")
@@ -132,8 +157,8 @@ function showCards() {
 }
 
 // updates the classes on the card DOM elements based on the state of the cards
-function updateCards() {
-
+function updateCards() { //sirve o debo limpiar cada elemento?
+  location.reload();
 }
 
 // initializes the game
@@ -152,11 +177,7 @@ console.log(cards)
 
 
 //por ahora el boton recarga la pagina para crear una nueva baraja
-function reload(){
-  location.reload();
-}
 
 const boton = document.getElementById("newGame");
-boton.addEventListener("click", reload);
-
+boton.addEventListener("click", updateCards);
 
