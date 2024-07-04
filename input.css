@@ -152,6 +152,9 @@
     box-shadow:rgb(53, 53, 53);
     font-family: "Indie Flower";
   }
+  button:hover{
+    background-color: rgba(137, 43, 226);
+  }
 
   #cont p{
     font-family: "Indie Flower";

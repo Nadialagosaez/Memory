@@ -95,7 +95,7 @@ function checkMatched() {
 
 // shows a message if the game is over
 function checkWin() {
-  if (matched === 16){
+  if (matched === cards.length){
     document.querySelector('.grid').style = 'display: none';
     document.getElementById('win').style = 'display: flex';
     let winCont =document.getElementById('winCont');
@@ -144,7 +144,7 @@ function showCards() {
 }
 
 // updates the classes on the card DOM elements based on the state of the cards
-function updateCards() { //sirve o debo limpiar cada elemento?
+function updateCards() { 
   location.reload();
 }
 
@@ -182,7 +182,7 @@ function timer(){
   const id = setInterval(function(){
     textTime.innerHTML = `Time: ${cont} seg`;
     cont++;
-    if (matched === 16){
+    if (matched === cards.length){
       clearInterval(id)
     }
   },1000);
