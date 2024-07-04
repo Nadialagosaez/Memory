@@ -55,8 +55,6 @@
   }
 
   .cardBack{
-    /* background-color: rgba(85, 85, 85, 0.568); */
-
     background-image: url('/img/back.png'),
     linear-gradient(
       to bottom,
@@ -100,8 +98,15 @@
 
 
   h1{
-    font-family:"Shadows Into Light";
+    font-family:"Indie Flower";
     font-size: 40px;
+  }
+
+  /* FONTS */
+  .indie-flower-regular {
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
 
   .shadows-into-light-regular {
@@ -112,7 +117,7 @@
   
   #win {
     display: none;
-    font-family:"Shadows Into Light";
+    font-family: "Indie Flower";
     font-size: 30px;
     color: white;
     justify-content: center;
@@ -144,14 +149,14 @@
       rgb(252 211 77),
       rgba(188, 12, 138, 0.868));
     color: white;
-    box-shadow:rgb(53, 53, 53)
+    box-shadow:rgb(53, 53, 53);
+    font-family: "Indie Flower";
   }
 
   #cont p{
-    font-family:"Shadows Into Light";
+    font-family: "Indie Flower";
     font-size: 30px;
     color: rgb(252 211 77);
     border-color: white;
-
   }
 }
