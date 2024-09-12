@@ -66,16 +66,16 @@ function flipCard(cardDiv) {
   
   cardDiv.classList.add("flipped");
   flippedCards.push(cards.find(cards => cards.id == cardDiv.id))
- 
+
   if (flippedCards.length === 2){
     setTimeout(checkMatched, 1000);
   }
-  
 }
 }
 
 // marks any flipped cards as matched if they match
 function checkMatched() {
+
   const [card1, card2] = flippedCards;
     if(card1.title === card2.title){
       document.getElementById(card1.id).classList.add('matched');
@@ -138,8 +138,16 @@ function showCards() {
         cardInner.appendChild(cardBack)
         cardInner.appendChild(cardFront)
 
+
         cardDiv.addEventListener("click", () => flipCard(cardDiv))
+        
         cardDiv.addEventListener("click", count_clicks)
+
+        
+        //quisiera que no cuente los clicks cuando la carta esta en Flipped pero no se como
+        // if(cardDiv.classList.contains('flipped')){
+        //   cardDiv.removeEventListener("click", count_clicks, {capture: false })
+        // }
   } 
 }
 
@@ -174,6 +182,8 @@ function count_clicks() {
     timer()
   };  
 }
+
+
 
 //TIMER -> Se ejecuta en el primer click
 let cont = 0;

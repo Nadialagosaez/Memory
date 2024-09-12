@@ -5,6 +5,7 @@
 @layer components {
   
   body{
+    background-color: #09ab9b;
     height: 100%;
   }
   .grid{
@@ -75,8 +76,8 @@
     background-image: url('/img/back.png'),
     linear-gradient(
       to bottom,
-      rgba(188, 12, 138, 0.868),
-      rgb(111, 9, 113)
+      #F2845C,
+      #732F2F
     );
     -webkit-transform:scale(1.3);transform:scale(1.1);
   }
@@ -117,7 +118,6 @@
   
   #win {
     display: none;
-    font-family: "Indie Flower";
     font-size: 30px;
     color: white;
     justify-content: center;
@@ -133,9 +133,9 @@
     align-content: center;
     background: linear-gradient(
       125deg,
-      rgb(252 211 77),
-      rgba(188, 12, 138, 0.868),
-      rgb(111, 9, 113)
+      #F2EEB3,
+      #F2845C,
+      #732F2F
     );;    
     border-radius: 10px;
     border-color: white;
@@ -146,8 +146,8 @@
   button{
     background: linear-gradient(
       125deg,
-      rgb(252 211 77),
-      rgba(188, 12, 138, 0.868));
+      #F2845C,
+      #da6136);
     color: white;
     box-shadow:rgb(53, 53, 53);
     font-family: "Indie Flower";
@@ -157,9 +157,8 @@
   }
 
   #cont p{
-    font-family: "Indie Flower";
     font-size: 30px;
-    color: rgb(252 211 77);
-    border-color: white;
+    color: #F2EEB3;
+    border-color: #F2EEB3;
   }
 }
